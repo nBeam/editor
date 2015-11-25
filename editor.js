@@ -1,15 +1,10 @@
 angular.module('beamng.stuff')
-
 .controller('EditorController', ['$log', '$scope', 'bngApi', function($log, $scope, bngApi) {
   if ($scope.initialized) {return; } // only run once
 
-  $scope.$emit('MenuHide');
 
   var intervalID;
   $scope.$on('$destroy', function() {
-    if (intervalID) { // works becuas var intervalID only sets it do undefined
-      window.clearInterval(intervalID);
-    }
 
   });
 
@@ -20,6 +15,13 @@ angular.module('beamng.stuff')
   });
 }
 
-]);
+]).controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+    $scope.close = function () {
+      $mdSidenav('left').close()
+        .then(function () {
+          $log.debug("close LEFT is done");
+        });
+    };
+  });
 
 // })();

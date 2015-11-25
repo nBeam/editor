@@ -1,5 +1,41 @@
 <link type="text/css" rel="stylesheet" href="modules/editor/editor.css">
-  <div ng-controller="EditorController" class="contentNavEditor">
 
-  </div>
-</div>
+<md-content style="width: 100%; height:100%" ng-controller="EditorController">
+  <section layout="row" flex style="height:100%">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z3" md-component-id="left" md-is-locked-open="true" style="width:30px:">
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">nBeam</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="one">
+            <md-content class="md-padding">
+              <p>
+                Hello?
+              </p>
+            </md-content>
+          </md-tab>
+          <md-tab label="two">
+            <md-content class="md-padding">
+              <p>
+                Hai der
+              </p>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-content>
+    </md-sidenav>
+    <md-content flex layout-padding>
+      <div layout="column" layout-fill layout-align="top center">
+        <p>
+        The left sidenav will 'lock open' on a medium (>=960px wide) device.
+        </p>
+        <p>
+        The right sidenav will focus on a specific child element.
+        </p>
+      </div>
+      <div flex></div>
+    </md-content>
+  </section>
+
+</md-content>
