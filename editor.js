@@ -22,6 +22,11 @@ angular.module('beamng.stuff')
           $log.debug("close LEFT is done");
         });
     };
-  });
-
+}).controller('editorMenu',['$log', '$scope', function ($log, $scope) {
+  var originatorEv;
+  $scope.openMenu = function($mdOpenMenu, ev) {
+     originatorEv = ev;
+     $mdOpenMenu(ev);
+  }
+}]);
 // })();

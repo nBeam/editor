@@ -4,7 +4,29 @@
   <section layout="row" flex style="height:100%">
     <md-sidenav class="md-sidenav-left md-whiteframe-z3" md-component-id="left" md-is-locked-open="true" style="width:30px:">
       <md-toolbar>
-        <h1 class="md-toolbar-tools">nBeam</h1>
+      <div class="md-toolbar-tools">
+    <div class="md-menu-editor" ng-controller="editorMenu" ng-cloak>
+	<md-menu>
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+        <md-icon class="material-icons">menu</md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button>
+            <md-icon class="material-icons">menu</md-icon>
+            Do something
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    </div>
+
+            <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon class="material-icons">menu</md-icon>
+        </md-button>
+
+        <h2>nBeam</h2>
+        </div>
       </md-toolbar>
       <md-content layout-padding ng-controller="LeftCtrl">
         <md-tabs md-dynamic-height md-border-bottom>
